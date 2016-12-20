@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+	<h1><%= link_to "Blog ", '#', id: "logo" %></h1>
+        
+        <nav> 
+          <div><%=@first_name%> <%=@last_name%></div>
+          <ul class="nav navbar-nav navbar-right">
+
+
+            <li><%= link_to "Home",   '../' %></li>
+            <li><%= link_to "New",   '../articles/new' %></li>            
+            <li><%= link_to "Sign in", '../users/sign_in' %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
