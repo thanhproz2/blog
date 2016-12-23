@@ -30,6 +30,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass', '~> 3.3'
+gem 'slim-rails'
+
 #gem "bootstrap-sass-rails"
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

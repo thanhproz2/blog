@@ -1,0 +1,30 @@
+
+head
+  body
+    h1 style=("text-align:center; color:blue")  Listing articles
+    table
+      tr style=("background-color: #9eefec")
+        td 
+          strong Title
+        td Content
+      - @articles.each do |article|
+        tr style="background-color:#fcefef"
+          td
+            strong = article.title
+              p style="font-size:11px"
+                =article.created_at.strftime('%b %d, %Y')
+                'by |  
+                =article.user.email
+                </br>
+                'Comments: (
+                =article.comments.count
+                ')
+            td
+              = article.text.truncate(358).html_safe()
+            td
+              = link_to 'Show', article_path(article) ,  class: "btn btn-sm btn-default"
+            -if article.user == current_user  
+                td
+                  = link_to 'Edit', edit_article_path(article) ,  class: "btn btn-sm btn-default"
+                td
+                  = link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default"
