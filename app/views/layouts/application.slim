@@ -1,22 +1,30 @@
+doctype html
+html
 head
   = csrf_meta_tags 
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 body
-  
-  header.navbar.navbar-fixed-top.navbar-inverseul.nav.navbar-nav.navbar-right
-    nav
-      ul.nav.navbar-nav.navbar-right
-        li = link_to "Home", articles_path
-        li = link_to "New", new_article_path         
-        li = link_to "Sign in", new_user_session_path
-        li = link_to 'Sign out', destroy_user_session_path, :method => :delete
-    h1
-      =link_to "Blog ", '#', id: "logo"
-   
-    div 
-      =@first_name
-      =@last_name
-      
-.container    
-  = yield
+  nav.navbar.navbar-inverse
+    .container
+      .navbar-header
+        button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+          span.sr-only" Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand Myblog
+
+      #navbar.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.active 
+            a<> = link_to "Home", articles_path 
+          li
+            a<> = link_to "New", new_article_path
+          li
+            a<> = link_to "Sign in", new_user_session_path
+          li
+            a<>= link_to 'Sign out', destroy_user_session_path, :method => :delete
+           
+  .container   
+    = yield

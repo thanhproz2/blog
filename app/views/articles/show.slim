@@ -1,18 +1,14 @@
-head
-  body
-    h1 
-      = @article.title
-    p
-      = raw @article.text
-    p
-      h4 style="color:blue"
-      | Comments (
-      =@article.comments.count
-      |)
-    p
-      = render @article.comments
- 
-    h4 style="color:blue"
-      | Add a comment:
-    = render 'comments/form'
+h1
+  = @article.title
+div.test
+  = raw @article.text
+h4 style="color:blue"
+  'Comments (
+  =@article.comments.count
+  ' &nbsp)
+p
+  = render @article.comments
+h4 style="color:blue"
+    | Add a comment:
+= render 'comments/form'
 
