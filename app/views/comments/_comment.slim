@@ -1,12 +1,11 @@
-p
-  strong
-    = comment.commenter  
-p
-  = comment.body
-  br
-  = link_to 'Delete', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' }
+section#commnents-section
+  p
+    strong
+      = comment.commenter  
+  p
+    = comment.body
+    br
+    = link_to 'Delete', [comment.article, comment], method: :delete,data: { confirm: 'Are you sure?' }
 
 
 

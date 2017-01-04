@@ -3,12 +3,14 @@ h1
 div.test
   = raw @article.text
 h4 style="color:blue"
-  'Comments (
+  =link_to "Comments"
+  '(
   =@article.comments.count
   ' &nbsp)
 p
   = render @article.comments
 h4 style="color:blue"
-    | Add a comment:
-= render 'comments/form'
+  = link_to "Add a comment:", "#"
+
+  = render 'comments/form'
 
