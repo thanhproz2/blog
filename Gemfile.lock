@@ -222,7 +222,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3)
+  bootstrap-sass
   byebug
   ckeditor
   coffee-rails (~> 4.2)
